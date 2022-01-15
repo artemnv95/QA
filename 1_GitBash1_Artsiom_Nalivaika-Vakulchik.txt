@@ -1,0 +1,106 @@
+Home_Task_1
+Linux terminal (GitBash) commands 
+
+1) Посмотреть где я
+pwd
+
+2) Создать папку
+mkdir foldername
+
+3) Зайти в папку
+cd foldername
+
+4) Создать 3 папки
+mkdir f_1 f_2 f_3
+
+5) Зайти в любоую папку
+cd f_1
+
+6) Создать 5 файлов (3 txt, 2 json)
+touch lesson_1.txt
+touch lesson_2.txt
+touch lesson_3.txt
+touch aboutmyself_1.json
+touch aboutmyself_2.json
+
+7) Создать 3 папки
+mkdir f_1_1 f_1_2 f_1_3
+
+8. Вывести список содержимого папки
+ls -la
+
+9) + Открыть любой txt файл
+vim lesson_1.txt
+
+10) + написать туда что-нибудь, любой текст.
+(press "i")
+(insert text) Hello! My name is Artsiom.
+              I'm professional QA Engineer)
+              I like to tell you about my wife.
+              She is beautiful!
+
+
+11) + сохранить и выйти.
+press "Esc"
+(insert) :wq > enter
+
+12) Выйти из папки на уровень выше
+cd ..
+
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+cd f_1
+mv lesson_2.txt ../f_2/lesson_2.txt
+mv lesson_3.txt ../f_2/lesson_3.txt
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cd ..
+cp f_2/lesson_2.txt f_3/lesson_2.txt
+cp f_2/lesson_3.txt f_3/lesson_3.txt
+
+15) Найти файл по имени
+find . -name "lesson_2.txt" - поиск файла по имени в текущей папке.
+find . -name "*.txt" - поиск всех файлов в формате .txt в текущей папке. 
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+tail -f lesson_1.txt
+
+17) вывести несколько первых строк из текстового файла
+head -2 lesson_1.txt (отобразил первые 2е строки)
+
+18) вывести несколько последних строк из текстового файла
+tail -2 lesson_1.txt (отобразил последние 2е строки)
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+less lesson_1.txt
+
+20) вывести дату и время
+date
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000
+curl "http://162.55.220.72:5005/object_info_3?name=Vadim&age=32&salary=1000"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+содержание .sh документа:
+
+#! /bin/bash
+
+cd foldername
+mkdir f_11 f_22 f_33
+cd f_11
+touch lesson_11.txt
+touch lesson_22.txt
+touch lesson_33.txt
+touch aboutmyself_11.json
+touch aboutmyself_22.json
+mkdir f_1_11 f_1_22 f_1_33
+ls -la
+cd f_11
+mv lesson_22.txt ../f_22/lesson_22.txt
+mv lesson_33.txt ../f_22/lesson_33.txt
+
+запустил файл через Bash командой sh script1.sh (можно так - ./script1.sh)

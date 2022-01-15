@@ -1,0 +1,94 @@
+1. На локальном репозитории сделать ветки для:
+- Postman
+git branch Postman (без перехода на ветку) / git checkout -b Postman (с переходом на ветку)
+
+- Jmeter
+git branch Jmeter (без перехода на ветку) / git checkout -b Jmeter (с переходом на ветку)
+
+- CheckLists
+git branch CheckLists (без перехода на ветку) / git checkout -b CheckLists (с переходом на ветку)
+
+- BugReports
+git branch BugReports (без перехода на ветку) / git checkout -b BugReports (с переходом на ветку)
+
+- SQL
+git branch SQL (без перехода на ветку) / git checkout -b SQL (с переходом на ветку)
+
+- Charles
+git branch Charles (без перехода на ветку) / git checkout -b Charles (с переходом на ветку)
+
+- Mobiletesting
+git branch Mobiletesting (без перехода на ветку) / git checkout -b Mobiletesting (с переходом на ветку)
+
+2. Запушить все ветки на внешний репозиторий
+git add .
+git commit -m "new.branches"
+git push origin --all
+
+3. В ветке Bug Reports сделать текстовый документ со структурой баг репорта
+cat > BugReport.txt
+Summary - short description of the problem
+Project - name of the project being tested
+Component - name of the part or function of the product being tested
+Severity - five-tier system: Blocker, Critical, Major, Minor, Trivial
+Priority - defect Priority: High, Medium, Low
+Status - bug workflow and life cycle
+Author - bug report creator
+Assigned To - name of the person assigned to resolve the issue
+
+Environment - information about the environment
+
+Steps to Reproduce - steps to easily reproduce the situation that led to the error
+Actual result - the result obtained after going through the steps to reproduce
+Expected Result - expected correct result
+
+Attachment - a log file, screenshot or any other document that can help clarify the cause of the error or indicate a way to solve the problem
+
+4. Запушить структуру багрепорта на внешний репозиторий
+git add BugReport.txt
+git commit -m "add BugReport.txt"
+git push 
+(fatal: The current branch BugReports has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin BugReports)
+
+git push --set-upstream origin BugReports
+OK
+
+5. Вмержить ветку Bug Reports в Main
+git checkout main
+git merge BugReports
++
+
+6. Запушить main на внешний репозиторий.
+git push
+
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout CheckLists
+cat > CheckList.txt
+File operations:
+file creation
+opening a file
+saving a document
+seal
+
+8. Запушить структуру на внешний репозиторий
+git add CheckList.txt
+git commit -m "add new file CheckList.txt"
+git push
+(fatal: The current branch CheckLists has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin CheckLists)
+
+git push --set-upstream origin CheckLists
+(Everything up-to-date
+Branch 'CheckLists' set up to track remote branch 'CheckLists' from 'origin'.)
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+ОК
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git fetch
+git pull
